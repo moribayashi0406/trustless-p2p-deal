@@ -17,6 +17,10 @@ pub mod tpd {
     pub fn finalizeDeal(ctx: Context<FinalizeDeal>) -> Result<()> {
         Ok(())
     }
+
+    pub fn cancelDeal(ctx: Context<CancelDeal>) -> Result<()> {
+        Ok(())
+    }
     
 }
 
@@ -24,6 +28,7 @@ pub mod tpd {
 pub struct InitializeDeal {}
 pub struct RegisterTaker{}
 pub struct FinalizeDeal{}
+pub struct CancelDeal{}
 
 #[account]
 #[derive(Default)]

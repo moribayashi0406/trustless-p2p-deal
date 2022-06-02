@@ -6,13 +6,24 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 pub mod tpd {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+    pub fn initializeDeal(ctx: Context<InitializeDeal>) -> Result<()> {
         Ok(())
     }
+
+    pub fn registerTaker(ctx: Context<RegisterTaker>) -> Result<()> { 
+        Ok(())
+    }
+
+    pub fn finalizeDeal(ctx: Context<FinalizeDeal>) -> Result<()> {
+        Ok(())
+    }
+    
 }
 
 #[derive(Accounts)]
-pub struct Initialize {}
+pub struct InitializeDeal {}
+pub struct RegisterTaker{}
+pub struct FinalizeDeal{}
 
 #[account]
 #[derive(Default)]

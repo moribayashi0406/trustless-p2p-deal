@@ -7,10 +7,10 @@ describe("tpd", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.Tpd as Program<Tpd>;
-
+  const amount = new anchor.BN(200000);
   it("Is initialized!", async () => {
     // Add your test here.
-    const tx = await program.methods.initialize().rpc();
+    const tx = await program.methods.initializeDeal(amount).rpc()
     console.log("Your transaction signature", tx);
   });
 });

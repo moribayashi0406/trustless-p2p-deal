@@ -41,22 +41,22 @@ CFLAGS = None
 CRATE_CC_NO_DEFAULTS = None
 DEBUG = Some("true")
 CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2,sse3,ssse3")
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse2_x86-64_unix.o" "-c" "c/blake3_sse2_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse2_x86-64_unix.o" "-c" "c/blake3_sse2_x86-64_unix.S"
 exit status: 0
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse41_x86-64_unix.o" "-c" "c/blake3_sse41_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse41_x86-64_unix.o" "-c" "c/blake3_sse41_x86-64_unix.S"
 exit status: 0
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx2_x86-64_unix.o" "-c" "c/blake3_avx2_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx2_x86-64_unix.o" "-c" "c/blake3_avx2_x86-64_unix.S"
 exit status: 0
 AR_x86_64-apple-darwin = None
 AR_x86_64_apple_darwin = None
 HOST_AR = None
 AR = None
-running: "ar" "cq" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_sse2_sse41_avx2_assembly.a" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse2_x86-64_unix.o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse41_x86-64_unix.o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx2_x86-64_unix.o"
+running: "ar" "cq" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_sse2_sse41_avx2_assembly.a" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse2_x86-64_unix.o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_sse41_x86-64_unix.o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx2_x86-64_unix.o"
 exit status: 0
-running: "ar" "s" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_sse2_sse41_avx2_assembly.a"
+running: "ar" "s" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_sse2_sse41_avx2_assembly.a"
 exit status: 0
 cargo:rustc-link-lib=static=blake3_sse2_sse41_avx2_assembly
-cargo:rustc-link-search=native=/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out
+cargo:rustc-link-search=native=/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out
 cargo:rerun-if-env-changed=CARGO_FEATURE_PURE
 cargo:rerun-if-env-changed=CARGO_FEATURE_PREFER_INTRINSICS
 cargo:rustc-cfg=blake3_avx512_ffi
@@ -74,18 +74,18 @@ CFLAGS = None
 CRATE_CC_NO_DEFAULTS = None
 DEBUG = Some("true")
 CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2,sse3,ssse3")
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-mavx512f" "-mavx512vl" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx512_x86-64_unix.o" "-c" "c/blake3_avx512_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-std=c11" "-mavx512f" "-mavx512vl" "-o" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx512_x86-64_unix.o" "-c" "c/blake3_avx512_x86-64_unix.S"
 exit status: 0
 AR_x86_64-apple-darwin = None
 AR_x86_64_apple_darwin = None
 HOST_AR = None
 AR = None
-running: "ar" "cq" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_avx512_assembly.a" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx512_x86-64_unix.o"
+running: "ar" "cq" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_avx512_assembly.a" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/c/blake3_avx512_x86-64_unix.o"
 exit status: 0
-running: "ar" "s" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_avx512_assembly.a"
+running: "ar" "s" "/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out/libblake3_avx512_assembly.a"
 exit status: 0
 cargo:rustc-link-lib=static=blake3_avx512_assembly
-cargo:rustc-link-search=native=/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/tpd/target/debug/build/blake3-1cc968df593ec88b/out
+cargo:rustc-link-search=native=/Users/moribayashishouhei/solana-dev/trustless-p2p-deal/target/debug/build/blake3-1cc968df593ec88b/out
 cargo:rerun-if-env-changed=CARGO_FEATURE_NO_NEON
 cargo:rerun-if-env-changed=CARGO_FEATURE_PURE
 cargo:rerun-if-env-changed=CC

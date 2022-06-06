@@ -9,11 +9,18 @@ pub mod tpd {
     pub fn initialize_deal(ctx: Context<InitializeDeal>, amount_tokens:u64,application_idx:u64) -> Result<()> {
         
         let state = &mut ctx.accounts.application_state;
-    
+        
+        // update state
+
         // amount and idx are just pass the data so there are no ctx stuff!
         state.amount_tokens = amount_tokens;
         state.idx = application_idx;
+        state.user_offerer = ctx.accounts.application_state.user_offerer;
+        state.user_taker = ctx.accounts.application_state.user_taker;
+        state.mint_of_token_being_sent = ctx.accounts.application_state.mint_of_token_being_sent;
         
+        // modify stage 
+
         Ok(())
     }
 
@@ -85,3 +92,31 @@ pub struct InitializeDeal<'info> {
 // pub struct FinalizeDeal<'info>{}
 // pub struct CancelDeal<'info>{}
 
+
+#[derive(Clone, Copy, PartialEq)]
+pub enum Stage{
+    VaultDeposited,
+    CompleteEscrow,
+    CancelEscrow
+}
+
+impl Stage {
+    fn to_code(&self) -> u8 {
+        match self {
+        Stage::VaultDeposited => 1,
+        Stage::CompleteEscrow => 2,
+        Stage::CancelEscrow => 3,
+        }
+    }
+    fn from(val: u8) -> std::result::Result<Stage, ProgramError> {
+        match val {
+            1 => Ok(Stage::VaultDeposited),
+            2 => Ok(Stage::CompleteEscrow),
+            3 => Ok(Stage::CancelEscrow),
+            unknown_value => {
+                msg!("Unknown stage: {}", unknown_value);
+                panic!()
+            }
+        }
+    }
+}

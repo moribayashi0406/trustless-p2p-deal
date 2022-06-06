@@ -15,12 +15,12 @@ pub mod tpd {
         // amount and idx are just pass the data so there are no ctx stuff!
         state.amount_tokens = amount_tokens;
         state.idx = application_idx;
-        state.user_offerer = ctx.accounts.application_state.user_offerer;
-        state.user_taker = ctx.accounts.application_state.user_taker;
-        state.mint_of_token_being_sent = ctx.accounts.application_state.mint_of_token_being_sent;
+        state.user_offerer = ctx.accounts.user_offerer.key().clone();
+        state.user_taker = ctx.accounts.user_taker.key().clone();
+        state.mint_of_token_being_sent = ctx.accounts.mint_of_token_being_sent.key().clone();
         
         // modify stage 
-
+        state.stage = Stage::VaultDeposited.to_code();
         Ok(())
     }
 

@@ -1,0 +1,3 @@
+・When PDA is generated, What seed should I use?
+I am studying with this tutorial and they use particulat seed and it is fixed(I meant to say that they dont't use any phrase that contains some idx or something)
+whhat poper way to save that seed?

@@ -3,6 +3,7 @@ use anchor_spl::{associated_token::AssociatedToken, token::{CloseAccount, Mint, 
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
+
 #[program]
 pub mod tpd {
     use super::*;
@@ -12,11 +13,10 @@ pub mod tpd {
         
         // update state
 
-        // amount and idx are just pass the data so there are no ctx stuff!
+        // amount and idx are just pass the data so there are no ctx stuff!(here alearedy serialized!)
         state.amount_tokens = amount_tokens;
         state.idx = application_idx;
         state.user_offerer = ctx.accounts.user_offerer.key().clone();
-        state.user_taker = ctx.accounts.user_taker.key().clone();
         state.mint_of_token_being_sent = ctx.accounts.mint_of_token_being_sent.key().clone();
         
         // modify stage 
@@ -24,9 +24,11 @@ pub mod tpd {
         Ok(())
     }
 
-    // pub fn registerTaker(ctx: Context<RegisterTaker>) -> Result<()> { 
-    //     Ok(())
-    // }
+    pub fn registerTaker(ctx: Context<RegisterTaker>) -> Result<()> { 
+        
+        
+        Ok(())
+    }
 
     // pub fn finalizeDeal(ctx: Context<FinalizeDeal>) -> Result<()> {
     //     Ok(())
@@ -67,7 +69,7 @@ pub struct InitializeDeal<'info> {
         payer=user_offerer,
         // space place holder(must change later!!!)
         space=1234,
-        seeds=[b"state".as_ref(), user_offerer.key().as_ref(), user_taker.key.as_ref(), mint_of_token_being_sent.key().as_ref(), application_idx.to_le_bytes().as_ref()],
+        seeds=[b"state".as_ref(), user_offerer.key().as_ref(), mint_of_token_being_sent.key().as_ref(), application_idx.to_le_bytes().as_ref()],
         bump,
     )]
     application_state: Account<'info, State>,
@@ -76,19 +78,25 @@ pub struct InitializeDeal<'info> {
         payer=user_offerer,
         // space place holder(must change later!!!)
         space=1234,
-        seeds=[b"wallet".as_ref(), user_offerer.key().as_ref(), user_taker.key.as_ref(), mint_of_token_being_sent.key().as_ref(), application_idx.to_le_bytes().as_ref()],
+        seeds=[b"wallet".as_ref(), user_offerer.key().as_ref(), mint_of_token_being_sent.key().as_ref(), application_idx.to_le_bytes().as_ref()],
         bump,
     )]
     vault_wallet: Account<'info, TokenAccount>,
     
     #[account(mut)]
     user_offerer: Signer<'info>,
-    user_taker: AccountInfo<'info>,
     mint_of_token_being_sent: Account<'info, Mint>,
     system_program: Program<'info, System>,
     token_program: Program<'info, Token>,
 }
-// pub struct RegisterTaker<'info>{}
+
+#[derive(Accounts)]
+pub struct RegisterTaker<'info>{
+    #[account(mut)]
+    user_taker_registerer :Signer<'info>
+
+
+}
 // pub struct FinalizeDeal<'info>{}
 // pub struct CancelDeal<'info>{}
 
